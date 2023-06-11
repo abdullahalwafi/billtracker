@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\TableBaruController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/table', [TableBaruController::class, 'index']);
+Route::prefix('/admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.index');
+    });
+});

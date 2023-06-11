@@ -9,5 +9,4 @@ class Gateway extends Model
 {
     use HasFactory;
     protected $table = 'gateway';
-    
 }
