@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin as ADMIN;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::prefix('/admin')->group(function () {
-    Route::get('/', function () {
-        return view('admin.index');
+    Route::get('/', [ADMIN\DashboardController::class, 'index']);
+
+    // categories
+    Route::prefix('/categories')->group(function () {
+        Route::get('/', [ADMIN\CategoriesController::class, 'index']);
+        Route::get('/form', [ADMIN\CategoriesController::class, 'create']);
+        Route::post('/form/store', [ADMIN\CategoriesController::class, 'store']);
+        Route::get('/form/{slug}', [ADMIN\CategoriesController::class, 'edit']);
+        Route::put('/form/update/{slug}', [ADMIN\CategoriesController::class, 'update']);
+        Route::delete('/destroy/{id}', [ADMIN\CategoriesController::class, 'destroy']);
+        Route::get('/checkSlug', [ADMIN\CategoriesController::class, 'checkSlug']);
     });
 });

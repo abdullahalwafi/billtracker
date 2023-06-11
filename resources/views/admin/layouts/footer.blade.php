@@ -159,6 +159,19 @@
 
 <!-- App js -->
 <script src="{{ asset('assets/js/app.js') }}"></script>
+@stack('script')
+
+<!-- Sweet Alerts js -->
+<script src="{{ asset('assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
+@if (session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: '{{ session('success') }}'
+        });
+    </script>
+@endif
 
 </body>
 

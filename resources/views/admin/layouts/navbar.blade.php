@@ -16,6 +16,10 @@
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="{{ asset('assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+
+    <!-- Sweet Alert-->
+    <link href="{{asset('assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
+    @stack('style')
 </head>
 
 <body>
@@ -90,34 +94,35 @@
                     <div class="dropdown d-inline-block language-switch">
                         <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <img src="{{asset('assets/images/flags/us.jpg')}}" alt="Header Language" height="16">
+                            <img src="{{ asset('assets/images/flags/us.jpg') }}" alt="Header Language" height="16">
                         </button>
                         <div class="dropdown-menu dropdown-menu-end">
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <img src="{{asset('assets/images/flags/spain.jpg')}}" alt="user-image" class="me-1" height="12">
+                                <img src="{{ asset('assets/images/flags/spain.jpg') }}" alt="user-image" class="me-1"
+                                    height="12">
                                 <span class="align-middle">Spanish</span>
                             </a>
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <img src="{{asset('assets/images/flags/germany.jpg')}}" alt="user-image" class="me-1"
-                                    height="12">
+                                <img src="{{ asset('assets/images/flags/germany.jpg') }}" alt="user-image"
+                                    class="me-1" height="12">
                                 <span class="align-middle">German</span>
                             </a>
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <img src="{{asset('assets/images/flags/italy.jpg')}}" alt="user-image" class="me-1"
-                                    height="12">
+                                <img src="{{ asset('assets/images/flags/italy.jpg') }}" alt="user-image"
+                                    class="me-1" height="12">
                                 <span class="align-middle">Italian</span>
                             </a>
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <img src="{{asset('assets/images/flags/russia.jpg')}}" alt="user-image" class="me-1"
-                                    height="12">
+                                <img src="{{ asset('assets/images/flags/russia.jpg') }}" alt="user-image"
+                                    class="me-1" height="12">
                                 <span class="align-middle">Russian</span>
                             </a>
                         </div>
@@ -133,19 +138,21 @@
                                 <div class="row g-0">
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{asset('assets/images/brands/github.png')}}" alt="Github">
+                                            <img src="{{ asset('assets/images/brands/github.png') }}" alt="Github">
                                             <span>GitHub</span>
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{asset('assets/images/brands/bitbucket.png')}}" alt="bitbucket">
+                                            <img src="{{ asset('assets/images/brands/bitbucket.png') }}"
+                                                alt="bitbucket">
                                             <span>Bitbucket</span>
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{asset('assets/images/brands/dribbble.png')}}" alt="dribbble">
+                                            <img src="{{ asset('assets/images/brands/dribbble.png') }}"
+                                                alt="dribbble">
                                             <span>Dribbble</span>
                                         </a>
                                     </div>
@@ -154,19 +161,21 @@
                                 <div class="row g-0">
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{asset('assets/images/brands/dropbox.png')}}" alt="dropbox">
+                                            <img src="{{ asset('assets/images/brands/dropbox.png') }}"
+                                                alt="dropbox">
                                             <span>Dropbox</span>
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{asset('assets/images/brands/mail_chimp.png')}}" alt="mail_chimp">
+                                            <img src="{{ asset('assets/images/brands/mail_chimp.png') }}"
+                                                alt="mail_chimp">
                                             <span>Mail Chimp</span>
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{asset('assets/images/brands/slack.png')}}" alt="slack">
+                                            <img src="{{ asset('assets/images/brands/slack.png') }}" alt="slack">
                                             <span>Slack</span>
                                         </a>
                                     </div>
