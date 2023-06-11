@@ -33,6 +33,9 @@
                             <div class="col-8">
                                 <input type="text" class="form-control" id="nama" name="nama"
                                     value="{{ isset($category) ? $category->nama : old('nama') }}">
+                                    @if (count($errors) > 0)
+                                    <i class="text-danger"><small>{{ $errors->first('nama') }}</small></i>
+                                @endif
                             </div>
                         </div>
                         <div class="form-group row mb-3">

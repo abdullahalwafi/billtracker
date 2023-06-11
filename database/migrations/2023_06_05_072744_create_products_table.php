@@ -15,7 +15,9 @@ return new class extends Migration
             $table->increments('id');
             $table->string('slug', 50)->unique();
             $table->string('nama', 45);
-            $table->string('harga', 45);
+            $table->string('harga_beli', 45);
+            $table->string('harga_jual', 45);
+            $table->integer('stok');
             $table->text('deskripsi')->nullable();
             $table->unsignedInteger('categories_id');
             $table->timestamps();

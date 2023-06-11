@@ -30,4 +30,15 @@ Route::prefix('/admin')->group(function () {
         Route::delete('/destroy/{id}', [ADMIN\CategoriesController::class, 'destroy']);
         Route::get('/checkSlug', [ADMIN\CategoriesController::class, 'checkSlug']);
     });
+    // products
+    Route::prefix('/products')->group(function () {
+        Route::get('/', [ADMIN\ProductsController::class, 'index']);
+        Route::get('/form', [ADMIN\ProductsController::class, 'create']);
+        Route::post('/form/store', [ADMIN\ProductsController::class, 'store']);
+        Route::get('/form/{slug}', [ADMIN\ProductsController::class, 'edit']);
+        Route::put('/form/update/{slug}', [ADMIN\ProductsController::class, 'update']);
+        Route::delete('/destroy/{id}', [ADMIN\ProductsController::class, 'destroy']);
+        Route::get('/checkSlug', [ADMIN\ProductsController::class, 'checkSlug']);
+    });
 });
+
