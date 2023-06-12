@@ -32,7 +32,7 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            "nama" => 'required|min:3',
+            "nama" => 'required|min:3|unique:categories',
         ]);
         Categories::create($validated);
         session()->flash('success', 'Data added successfully!');
@@ -64,7 +64,7 @@ class CategoriesController extends Controller
     {
         $category = Categories::where('slug', $slug)->first();
         $validated = $request->validate([
-            "nama" => 'required|min:3',
+            "nama" => 'required|min:3|unique:categories,nama,' . $category->id,
         ]);
         $category->update($validated);
         session()->flash('success', 'Data successfully changed!');

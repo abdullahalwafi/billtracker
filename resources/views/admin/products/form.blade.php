@@ -66,7 +66,7 @@
                         <div class="form-group row mb-3">
                             <label for="harga_beli" class="col-4 col-form-label">Harga_beli</label>
                             <div class="col-8">
-                                <input type="text" class="form-control" id="harga_beli" name="harga_beli"
+                                <input type="number" class="form-control" id="harga_beli" name="harga_beli"
                                     value="{{ isset($product) ? $product->harga_beli : old('harga_beli') }}">
                                 @if (count($errors) > 0)
                                     <i class="text-danger"><small>{{ $errors->first('harga_beli') }}</small></i>
@@ -76,7 +76,7 @@
                         <div class="form-group row mb-3">
                             <label for="harga_jual" class="col-4 col-form-label">Harga_jual</label>
                             <div class="col-8">
-                                <input type="text" class="form-control" id="harga_jual" name="harga_jual"
+                                <input type="number" class="form-control" id="harga_jual" name="harga_jual"
                                     value="{{ isset($product) ? $product->harga_jual : old('harga_jual') }}">
                                 @if (count($errors) > 0)
                                     <i class="text-danger"><small>{{ $errors->first('harga_jual') }}</small></i>
@@ -86,7 +86,7 @@
                         <div class="form-group row mb-3">
                             <label for="stok" class="col-4 col-form-label">Stok</label>
                             <div class="col-8">
-                                <input type="text" class="form-control" id="stok" name="stok"
+                                <input type="number" class="form-control" id="stok" name="stok"
                                     value="{{ isset($product) ? $product->stok : old('stok') }}">
                                 @if (count($errors) > 0)
                                     <i class="text-danger"><small>{{ $errors->first('stok') }}</small></i>
@@ -94,23 +94,22 @@
                             </div>
                         </div>
                         <div class="form-group row mb-3">
-                            <label for="deskripsi" class="col-4 col-form-label">Deskripsi</label>
-                            <div class="col-8">
-                                <textarea class="form-control" id="deskripsi" name="deskripsi"
-                                    value="{{ isset($product) ? $product->deskripsi : old('deskripsi') }}">{{ isset($product) ? $product->deskripsi : old('deskripsi') }}</textarea>
-                                @if (count($errors) > 0)
-                                    <i class="text-danger"><small>{{ $errors->first('deskripsi') }}</small></i>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-3">
                             <label for="imgproducts" class="col-4 col-form-label">Imgproducts</label>
                             <div class="col-8">
                                 <input type="file" class="col-8 form-control" id="imgproducts" name="imgproducts[]"
                                     multiple>
                                 @if (count($errors) > 0)
                                     <i class="text-danger"><small>{{ $errors->first('imgproducts') }}</small></i>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label for="deskripsi" class="col-md-4 col-form-label">Deskripsi</label>
+                            <div class="col-md-8">
+                                <textarea class="classic-editor" id="deskripsi" name="deskripsi"
+                                    value="{{ isset($product) ? $product->deskripsi : old('deskripsi') }}">{{ isset($product) ? $product->deskripsi : old('deskripsi') }}</textarea>
+                                @if (count($errors) > 0)
+                                    <i class="text-danger"><small>{{ $errors->first('deskripsi') }}</small></i>
                                 @endif
                             </div>
                         </div>

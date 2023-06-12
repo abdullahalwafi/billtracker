@@ -36,6 +36,7 @@
                                 <th>Harga Beli</th>
                                 <th>Stok</th>
                                 <th>Kategori</th>
+                                <th>History</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -48,6 +49,7 @@
                                     <td>Rp.{{ number_format($product->harga_jual, 0, ',', '.') }}</td>
                                     <td>{{ $product->stok }}</td>
                                     <td>{{ $product->categories->nama }}</td>
+                                    <td>{{ $product->updated_at }}</td>
                                     <td>
                                         <a class="btn btn-primary btn-sm" href="{{ url('/admin/products/form', $product->slug) }}"><i class="uil-pen"></i></a>
                                         <form action="{{ url('/admin/products/destroy', $product->id) }}"

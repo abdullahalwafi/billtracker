@@ -40,5 +40,13 @@ Route::prefix('/admin')->group(function () {
         Route::delete('/destroy/{id}', [ADMIN\ProductsController::class, 'destroy']);
         Route::get('/checkSlug', [ADMIN\ProductsController::class, 'checkSlug']);
     });
+    // clients
+    Route::prefix('/clients')->group(function () {
+        Route::get('/', [ADMIN\ClientsController::class, 'index']);
+        Route::get('/form', [ADMIN\ClientsController::class, 'create']);
+        Route::post('/form/store', [ADMIN\ClientsController::class, 'store']);
+        Route::get('/form/{id}', [ADMIN\ClientsController::class, 'edit']);
+        Route::put('/form/update/{id}', [ADMIN\ClientsController::class, 'update']);
+        Route::delete('/destroy/{id}', [ADMIN\ClientsController::class, 'destroy']);
+    });
 });
-
